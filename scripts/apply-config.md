@@ -11,7 +11,7 @@ Copy everything below and paste into Claude Code on your new device:
 ```
 I need to set up my Claude Code environment to match my other devices. Please:
 
-1. Go to my GitHub repo and read: https://raw.githubusercontent.com/[YOUR_USERNAME]/claude-code-sync/main/CLAUDE_CONFIG.md
+1. Go to my GitHub repo and read: https://raw.githubusercontent.com/natexecuit/claude-code-sync/main/CLAUDE_CONFIG.md
 
 2. Parse the configuration and apply ALL settings:
    - StatusLine: Create the appropriate script for this OS (detect Windows/Mac/Linux)
@@ -31,7 +31,7 @@ I need to set up my Claude Code environment to match my other devices. Please:
 ## ONE-LINE VERSION (Quick Setup)
 
 ```
-Set up my Claude Code by fetching and applying config from: https://raw.githubusercontent.com/[YOUR_USERNAME]/claude-code-sync/main/CLAUDE_CONFIG.md
+Set up my Claude Code by fetching and applying config from: https://raw.githubusercontent.com/natexecuit/claude-code-sync/main/CLAUDE_CONFIG.md
 ```
 
 ---

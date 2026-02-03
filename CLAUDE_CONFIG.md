@@ -52,7 +52,7 @@
 ```
 Please set up my Claude Code environment by reading the sync configuration from my GitHub repo:
 
-1. Go to: https://github.com/[YOUR_USERNAME]/claude-code-sync/raw/main/CLAUDE_CONFIG.md
+1. Go to: https://github.com/natexecuit/claude-code-sync/raw/main/CLAUDE_CONFIG.md
 2. Parse the configuration and apply all settings, skills, and customizations
 3. Create the statusline script appropriate for this OS (Windows/Mac/Linux)
 4. Update settings.json with all configurations

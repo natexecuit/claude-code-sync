@@ -13,10 +13,8 @@ Synchronize Claude Code configuration across multiple devices.
 Paste this into Claude Code:
 
 ```
-Set up my Claude Code by fetching and applying config from: https://raw.githubusercontent.com/[YOUR_USERNAME]/claude-code-sync/main/CLAUDE_CONFIG.md
+Set up my Claude Code by fetching and applying config from: https://raw.githubusercontent.com/natexecuit/claude-code-sync/main/CLAUDE_CONFIG.md
 ```
-
-Replace `[YOUR_USERNAME]` with the repository owner's username.
 
 ## Current Configuration
 

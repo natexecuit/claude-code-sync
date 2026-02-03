@@ -51,7 +51,7 @@ Please sync my Claude Code configuration changes to GitHub.
 ### On New Device:
 
 ```
-Please set up my Claude Code environment from my sync config at https://github.com/[YOUR_USERNAME]/claude-code-sync
+Please set up my Claude Code environment from my sync config at https://github.com/natexecuit/claude-code-sync
 ```
 
 ---
