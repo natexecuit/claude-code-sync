@@ -1,6 +1,6 @@
 # Claude Code Configuration Sync
 
-**Last Updated:** 2026-02-03
+**Last Updated:** 2026-02-03 15:45
 **Device Sync ID:** nathaniel-claude-config-v1
 
 ---
@@ -9,8 +9,18 @@
 
 ### StatusLine
 - **File:** `~/.claude/statusline-command.ps1` (Windows) / `statusline-command.sh` (Mac/Linux)
-- **Purpose:** Display model, directory, output style, agent mode, context usage
+- **Purpose:** Display model, progress bar, percentage, tokens, git branch, project name
+- **Features:** Color-coded elements (256-color ANSI), abbreviated token numbers (90k format)
+- **Color Scheme:**
+  - Model name: Golden/Yellow
+  - Progress bar: Bright Blue
+  - Percentage: Orange
+  - Tokens: Cyan
+  - Git branch: Green
+  - Project name: Pink/Magenta
+  - Separator: Gray
 - **Installed:** 2026-02-03 via statusline-setup agent
+- **Updated:** 2026-02-03 15:45 - Added colors, abbreviated tokens, smart project name detection
 
 ### Skills Installed
 | Skill Name | Tokens | Purpose | Date Added |
@@ -33,6 +43,13 @@
 ---
 
 ## Change Log
+
+### 2026-02-03 15:45
+- **STATUSLINE UPDATE:** Enhanced with colors and better formatting
+  - Added 256-color ANSI color scheme for all elements
+  - Token display now uses abbreviated format (90k instead of 90000)
+  - Smart project name detection: project_dir → git repo root → current directory
+  - Elements: Model name | Progress bar | Percentage | Tokens | Git branch | Project name
 
 ### 2026-02-03
 - **INITIAL SETUP:** Created this sync system
