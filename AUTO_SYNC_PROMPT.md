@@ -22,7 +22,7 @@ Whenever I make changes to Claude Code configuration, you must:
    "I detected changes to your Claude Code configuration. Would you like to sync this to your other devices?"
 
 3. IF I SAY YES:
-   a. Read the current sync file at: /s/Claude/repos/claude-projects/claude-code-sync/CLAUDE_CONFIG.md
+   a. Read the current sync file at: CLAUDE_CONFIG.md in the sync repo
    b. Update it with the new changes
    c. Update the "Last Updated" timestamp
    d. Add an entry to the "Change Log" section
@@ -36,6 +36,8 @@ Whenever I make changes to Claude Code configuration, you must:
    - Windows: S:\Claude\repos\claude-projects\claude-code-sync\CLAUDE_CONFIG.md
    - Mac: ~/Claude/repos/claude-projects/claude-code-sync/CLAUDE_CONFIG.md
    - Linux: ~/Claude/repos/claude-projects/claude-code-sync/CLAUDE_CONFIG.md
+
+   Adjust these paths if your repo is located elsewhere.
 
 === END CLAUDE CODE SYNC BEHAVIOR ===
 ```

@@ -1,6 +1,6 @@
 # Claude Code Configuration Sync
 
-**Last Updated:** 2026-02-03 15:45
+**Last Updated:** 2026-02-04
 **Device Sync ID:** nathaniel-claude-config-v1
 
 ---
@@ -19,8 +19,21 @@
   - Git branch: Green
   - Project name: Pink/Magenta
   - Separator: Gray
+- **Settings Configuration:**
+  ```json
+  "statusLine": {
+    "type": "command",  // MUST be "command" (not "shell")
+    "command": "powershell",  // or "bash" for Mac/Linux
+    "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "%USERPROFILE%\\.claude\\statusline-command.ps1"]
+    // NOTE: Replace %USERPROFILE% with your actual user profile path, or use the expanded path:
+    // On Windows: C:\Users\<YourUsername>\.claude\statusline-command.ps1
+    // On Mac/Linux: ~/.claude/statusline-command.sh
+  }
+  ```
+  ⚠️ **IMPORTANT:** `type` must be `"command"` - using `"shell"` will cause a validation error
 - **Installed:** 2026-02-03 via statusline-setup agent
 - **Updated:** 2026-02-03 15:45 - Added colors, abbreviated tokens, smart project name detection
+- **Fixed:** 2026-02-04 - Corrected `statusLine.type` from "shell" to "command" to fix validation error
 
 ### Skills Installed
 | Skill Name | Tokens | Purpose | Date Added |
@@ -44,6 +57,17 @@
 
 ## Change Log
 
+### 2026-02-04
+- **BUG FIX:** Corrected `statusLine.type` from "shell" to "command"
+  - The `type` field must be `"command"` - using `"shell"` causes a validation error
+  - Updated documentation with explicit JSON configuration example
+  - Added warning note about required value
+- **DOCUMENTATION FIX:** Updated all file structure diagrams to match actual repository files
+  - Fixed references to non-existent files (statusline-command.sh, keybindings.json, skills/ folder)
+  - Added missing files to structure diagrams (README.md, INSTRUCTIONS.md, AUTO_SYNC_PROMPT.md, statusline-command.ps1)
+  - Removed generic `[YOUR_USERNAME]` and `[REPO_PATH]` placeholders throughout documentation
+  - Standardized file references across all documentation files
+
 ### 2026-02-03 15:45
 - **STATUSLINE UPDATE:** Enhanced with colors and better formatting
   - Added 256-color ANSI color scheme for all elements
@@ -54,8 +78,8 @@
 ### 2026-02-03
 - **INITIAL SETUP:** Created this sync system
 - **STATUSLINE:** Installed via statusline-setup agent
-  - Created `C:\Users\Nathaniel\.claude\statusline-command.ps1`
-  - Updated `C:\Users\Nathaniel\.claude\settings.json` with statusLine config
+  - Created `%USERPROFILE%\.claude\statusline-command.ps1` (Windows) / `~/.claude/statusline-command.sh` (Mac/Linux)
+  - Updated `%USERPROFILE%\.claude\settings.json` with statusLine config
 - **REPO:** Created `claude-code-sync` repository structure
 
 ---
@@ -81,7 +105,7 @@ Please set up my Claude Code environment by reading the sync configuration from 
 
 **Run this prompt on your current device:**
 ```
-Please log the current Claude Code configuration changes to my sync file at /s/Claude/repos/claude-projects/claude-code-sync/CLAUDE_CONFIG.md and then help me commit and push to GitHub with the message "Update Claude Code config [date]".
+Please log the current Claude Code configuration changes to my sync file and then help me commit and push to GitHub with the message "Update Claude Code config [date]".
 ```
 
 ---
@@ -93,7 +117,7 @@ Please log the current Claude Code configuration changes to my sync file at /s/C
 Save this as a reusable prompt/alias:
 
 ```
-After any Claude Code setup change, ask me: "Would you like to log this change to your sync config for other devices?" If I say yes, automatically update /s/Claude/repos/claude-projects/claude-code-sync/CLAUDE_CONFIG.md with the new changes, increment the version, and offer to commit and push to GitHub.
+After any Claude Code setup change, ask me: "Would you like to log this change to your sync config for other devices?" If I say yes, automatically update CLAUDE_CONFIG.md with the new changes, increment the version, and offer to commit and push to GitHub.
 ```
 
 ### Quick Sync Commands
@@ -110,14 +134,16 @@ After any Claude Code setup change, ask me: "Would you like to log this change t
 ## File Structure
 
 ```
-/s/Claude/repos/claude-projects/claude-code-sync/
+claude-code-sync/
 ├── CLAUDE_CONFIG.md           # This file - main configuration log
-├── scripts/
-│   ├── statusline-command.ps1 # Windows statusline script
-│   ├── statusline-command.sh  # Mac/Linux statusline script
-│   └── apply-config.sh        # Auto-apply script for new devices
-├── keybindings.json           # Custom keybindings (if any)
-└── skills/                    # Copies of custom skill configs
+├── README.md                  # Project overview and quick start
+├── INSTRUCTIONS.md            # Detailed sync instructions
+├── AUTO_SYNC_PROMPT.md        # Auto-sync behavior prompts
+└── scripts/
+    ├── statusline-command.ps1 # Windows statusline script
+    ├── statusline-command.sh  # Mac/Linux statusline script
+    ├── apply-config.md        # New device setup prompts
+    └── apply-config.sh        # Auto-apply script for Mac/Linux
 ```
 
 ---

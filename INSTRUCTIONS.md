@@ -14,13 +14,13 @@
 
 ## Project-Level Auto-Sync Instructions
 
-Add this to your project prompt orClaude Code system prompt:
+Add this to your project prompt or Claude Code system prompt:
 
 ```
 CLAUDE CODE SYNC BEHAVIOR:
 Whenever I make changes to Claude Code configuration (settings, keybindings, skills, statusline, etc.), automatically:
 1. Ask: "Sync this change to your other devices?"
-2. If yes, update /s/Claude/repos/claude-projects/claude-code-sync/CLAUDE_CONFIG.md
+2. If yes, update CLAUDE_CONFIG.md in the sync repo
 3. Show what changed and offer to commit & push to GitHub
 ```
 
@@ -31,12 +31,15 @@ Whenever I make changes to Claude Code configuration (settings, keybindings, ski
 ### First Time Only:
 
 ```bash
+# Windows - adjust the path to your repo location:
 cd S:\Claude\repos\claude-projects\claude-code-sync
 git init
-git add CLAUDE_CONFIG.md INSTRUCTIONS.md README.md scripts/
+git add CLAUDE_CONFIG.md INSTRUCTIONS.md README.md AUTO_SYNC_PROMPT.md scripts/
 git commit -m "Initial Claude Code config sync"
 gh repo create claude-code-sync --public --source=. --push
 ```
+
+Note: On Windows, run `git add` in Git Bash or use forward slashes in paths.
 
 ---
 
@@ -61,11 +64,14 @@ Please set up my Claude Code environment from my sync config at https://github.c
 ```
 claude-code-sync/
 ├── CLAUDE_CONFIG.md       # Main configuration log
-├── INSTRUCTIONS.md        # This file
-├── README.md             # Public overview
+├── INSTRUCTIONS.md        # This file - detailed sync instructions
+├── README.md              # Public overview
+├── AUTO_SYNC_PROMPT.md    # Auto-sync behavior prompts
 └── scripts/
-    ├── apply-config.md   # New device setup prompts
-    └── [future scripts]
+    ├── statusline-command.ps1  # Windows statusline script
+    ├── statusline-command.sh   # Mac/Linux statusline script
+    ├── apply-config.md         # New device setup prompts
+    └── apply-config.sh         # Auto-apply script for Mac/Linux
 ```
 
 ---

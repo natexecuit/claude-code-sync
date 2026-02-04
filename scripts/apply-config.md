@@ -19,7 +19,9 @@ I need to set up my Claude Code environment to match my other devices. Please:
    - Settings: Update ~/.claude/settings.json with all configurations
    - Keybindings: Apply any custom keybindings
 
-3. Create the local sync folder structure at: ~/claude-code-sync/ or appropriate path
+3. Clone the sync repo to your local machine:
+   - Windows: git clone https://github.com/natexecuit/claude-code-sync.git S:\Claude\repos\claude-projects\claude-code-sync
+   - Mac/Linux: git clone https://github.com/natexecuit/claude-code-sync.git ~/Claude/repos/claude-projects/claude-code-sync
 
 4. After setup, show me a summary of what was applied
 
@@ -33,12 +35,6 @@ I need to set up my Claude Code environment to match my other devices. Please:
 ```
 Set up my Claude Code by fetching and applying config from: https://raw.githubusercontent.com/natexecuit/claude-code-sync/main/CLAUDE_CONFIG.md
 ```
-
----
-
-## UPDATE URL BEFORE USE
-
-Replace `[YOUR_USERNAME]` with your actual GitHub username in the URLs above.
 
 ---
 

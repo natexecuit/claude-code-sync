@@ -23,12 +23,16 @@ See [CLAUDE_CONFIG.md](CLAUDE_CONFIG.md) for full details of tracked settings.
 ## Structure
 
 ```
-.
+claude-code-sync/
 ├── CLAUDE_CONFIG.md       # Live configuration log
+├── README.md              # This file - project overview
 ├── INSTRUCTIONS.md        # Detailed sync instructions
-├── README.md             # This file
+├── AUTO_SYNC_PROMPT.md    # Auto-sync behavior prompts
 └── scripts/
-    └── apply-config.md   # Device setup prompts
+    ├── statusline-command.ps1  # Windows statusline script
+    ├── statusline-command.sh   # Mac/Linux statusline script
+    ├── apply-config.md         # Device setup prompts
+    └── apply-config.sh         # Auto-apply script for Mac/Linux
 ```
 
 ## Usage
