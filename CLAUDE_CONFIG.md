@@ -148,6 +148,36 @@ claude-code-sync/
 
 ---
 
+## Known Issues & Fixes (For Future AI Agents)
+
+### Issue: statusLine.type Validation Error
+**Date:** 2026-02-04
+**Error:** `Invalid value. Expected one of: "command"`
+
+**Problem:**
+When AI agents modify `settings.json`, they may incorrectly set `statusLine.type` to `"shell"`. This is invalid and causes Claude Code to fail validation on startup.
+
+**Root Cause:**
+- The `statusLine.type` field only accepts one valid value: `"command"`
+- AI agents unfamiliar with Claude Code's schema may assume `"shell"` is valid
+
+**Correct Configuration:**
+```json
+"statusLine": {
+  "type": "command",        // MUST be "command" - NEVER use "shell"
+  "command": "powershell",  // or "bash" for Mac/Linux
+  "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "%USERPROFILE%\\.claude\\statusline-command.ps1"]
+}
+```
+
+**What to Do When Modifying Settings:**
+1. ALWAYS use `"type": "command"` for statusLine configuration
+2. NEVER change `"type"` to `"shell"` or any other value
+3. If you modify settings.json, verify the statusLine section remains intact
+4. Use `%USERPROFILE%` for Windows paths instead of hardcoded usernames (e.g., `C:\Users\Nathaniel\`)
+
+---
+
 ## Notes
 
 - This file should be committed to GitHub for cross-device sync
